@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow p-4">
+        <h2 class="text-center mb-4">OTP Verification</h2>
+        <form [formGroup]="otpForm" (ngSubmit)="verifyOtp()">
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">OTP</label>
+            <input type="text" class="form-control" formControlName="otp" placeholder="Enter 6-digit OTP" required>
+          </div>
+          <button type="submit" class="btn btn-success w-100" [disabled]="!otpForm.valid">Verify OTP</button>
+        </form>
+        <p class="text-center text-danger mt-3">{{ message }}</p>
+      </div>
+    </div>
+  </div>
+</div>
